@@ -1,5 +1,4 @@
 package ru.zaroyan.democloudstorage.model;
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,6 +16,5 @@ public class User {
     private long id;
     @Column(length = 50)
     private String username;
-
     private String password;
 }
