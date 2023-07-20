@@ -15,9 +15,11 @@ public class File {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    private String path;
+    private String fileName;
+    private String fileType;
 
+    @Lob
+    private byte[] fileContent;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
