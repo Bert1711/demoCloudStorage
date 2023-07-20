@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class File {
+public class FileCloud {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
