@@ -5,19 +5,22 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class User {
+public class FileStorage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String username;
-    private String password;
+    private Long id;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<FileCloud> files;
+    private String fileName;
+    private String fileType;
+
+    @Lob
+    private byte[] fileContent;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private UserStorage user;
 }

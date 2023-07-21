@@ -1,22 +1,22 @@
 package ru.zaroyan.democloudstorage.service;
 
 import org.springframework.stereotype.Service;
-import ru.zaroyan.democloudstorage.model.User;
-import ru.zaroyan.democloudstorage.repository.UserRepository;
+import ru.zaroyan.democloudstorage.model.UserStorage;
+import ru.zaroyan.democloudstorage.repository.UserStorageRepository;
 
 @Service
 public class UserService {
-    private final UserRepository userRepository;
+    private final UserStorageRepository userRepository;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserStorageRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public User findUserByUsername(String username) {
+    public UserStorage findUserByUsername(String username) {
         return userRepository.findByUsername(username);
     }
 
-    public User saveUser(User user) {
+    public UserStorage saveUser(UserStorage user) {
         return userRepository.save(user);
     }
 }
