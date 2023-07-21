@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class UserStorage {
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String username;

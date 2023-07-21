@@ -1,7 +1,7 @@
-package ru.zaroyan.democloudstorage.service;
+package ru.zaroyan.democloudstorage.services;
 import org.springframework.stereotype.Service;
 import ru.zaroyan.democloudstorage.model.FileStorage;
-import ru.zaroyan.democloudstorage.model.UserStorage;
+import ru.zaroyan.democloudstorage.model.Person;
 import ru.zaroyan.democloudstorage.repository.FileStorageRepository;
 
 import java.util.List;
@@ -15,7 +15,7 @@ public class FileCloudService {
         this.fileRepository = fileRepository;
     }
 
-    public List<FileStorage> getFilesByUser(UserStorage user) {
+    public List<FileStorage> getFilesByUser(Person user) {
         return fileRepository.findByUser_Username(user.getUsername());
     }
 

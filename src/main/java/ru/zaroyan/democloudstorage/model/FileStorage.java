@@ -22,5 +22,5 @@ public class FileStorage {
     private byte[] fileContent;
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private UserStorage user;
+    private Person user;
 }

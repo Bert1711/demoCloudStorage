@@ -2,15 +2,15 @@ package ru.zaroyan.democloudstorage.security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import ru.zaroyan.democloudstorage.model.UserStorage;
+import ru.zaroyan.democloudstorage.model.Person;
 
 import java.util.Collection;
 
-public class UserStorageDetails implements UserDetails {
+public class PersonDetails implements UserDetails {
 
-    private final UserStorage userStorage;
+    private final Person userStorage;
 
-    public UserStorageDetails(UserStorage userStorage) {
+    public PersonDetails(Person userStorage) {
         this.userStorage = userStorage;
     }
 
