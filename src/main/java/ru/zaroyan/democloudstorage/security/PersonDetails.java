@@ -8,10 +8,10 @@ import java.util.Collection;
 
 public class PersonDetails implements UserDetails {
 
-    private final Person userStorage;
+    private final Person person;
 
     public PersonDetails(Person userStorage) {
-        this.userStorage = userStorage;
+        this.person = userStorage;
     }
 
     @Override
@@ -21,12 +21,12 @@ public class PersonDetails implements UserDetails {
 
     @Override
     public String getPassword() {
-        return this.userStorage.getPassword();
+        return this.person.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return this.userStorage.getUsername();
+        return this.person.getUsername();
     }
 
     @Override
@@ -47,5 +47,9 @@ public class PersonDetails implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    public Person getPerson() {
+        return this.person;
     }
 }
